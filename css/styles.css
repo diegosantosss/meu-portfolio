@@ -1,0 +1,53 @@
+body { font-family: 'Inter', sans-serif; background-color: #010e24; color: #dbe6ff; scroll-behavior: smooth; overflow-x: hidden; }
+
+/* Background Code Animation */
+#code-bg {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 0; opacity: 0.15;
+}
+
+.nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+.nav-link::after {
+    content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+    background: #58f5d1; transition: width 0.3s;
+}
+.nav-link:hover::after { width: 100%; }
+.nav-link:hover { color: #58f5d1; transform: translateY(-2px); }
+
+.glass-card { 
+    background: rgba(11, 32, 61, 0.4); 
+    backdrop-filter: blur(10px); 
+    border: 1px solid rgba(88, 245, 209, 0.1); 
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.glass-card:hover { transform: translateY(-10px); border-color: rgba(88, 245, 209, 0.4); }
+
+.glow-primary { text-shadow: 0 0 20px rgba(88, 245, 209, 0.5); }
+.active-lang { color: #58f5d1 !important; font-weight: bold; }
+
+/* Moldura Neon Premium */
+.photo-frame {
+    position: relative;
+    padding: 12px; /* Espaçamento da moldura */
+    background: linear-gradient(135deg, rgba(88, 245, 209, 0.3), rgba(108, 214, 255, 0.3));
+    border-radius: 2rem;
+    border: 1px solid rgba(88, 245, 209, 0.2);
+    box-shadow: 0 0 30px rgba(88, 245, 209, 0.1);
+}
+
+.photo-frame::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 2.2rem;
+    padding: 2px;
+    background: linear-gradient(135deg, #58f5d1, transparent, #6cd6ff);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Diego Santos | Software Architect</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#58f5d1", "tertiary": "#6cd6ff", "surface": "#010e24",
+                        "on-surface": "#dbe6ff", "on-surface-variant": "#9eabc8",
+                        "surface-container-low": "#02132b", "surface-container-high": "#0b203d",
+                        "surface-container-highest": "#102645", "outline-variant": "#3b4861",
+                    },
+                    fontFamily: { "headline": ["Space Grotesk"], "body": ["Inter"] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="selection:bg-primary selection:text-on-primary">
+
+<nav class="fixed top-0 w-full z-50 bg-[#010e24]/90 backdrop-blur-xl border-b border-outline-variant/20">
+    <div class="flex justify-between items-center px-8 h-20 max-w-7xl mx-auto w-full">
+        <div class="text-2xl font-bold tracking-tighter text-primary font-headline animate-pulse">DS</div>
+        <div class="hidden md:flex items-center gap-8">
+            <a class="nav-link text-on-surface-variant font-headline text-xs uppercase tracking-widest" href="#sobre" data-i18n="nav-about">Sobre</a>
+            <a class="nav-link text-on-surface-variant font-headline text-xs uppercase tracking-widest" href="#carreira" data-i18n="nav-career">Carreira</a>
+            <a class="nav-link text-on-surface-variant font-headline text-xs uppercase tracking-widest" href="#tecnologias" data-i18n="nav-tech">Tecnologias</a>
+            <a class="nav-link text-on-surface-variant font-headline text-xs uppercase tracking-widest" href="#projetos" data-i18n="nav-projects">Projetos</a>
+            <a class="nav-link text-on-surface-variant font-headline text-xs uppercase tracking-widest" href="#academico" data-i18n="nav-edu">Acadêmico</a>
+            <a class="nav-link text-on-surface-variant font-headline text-xs uppercase tracking-widest" href="#contato" data-i18n="nav-contact">Contato</a>
+        </div>
+        <div class="flex items-center gap-3 px-4 py-2 bg-surface-container-high rounded-full border border-outline-variant/30">
+            <div class="flex gap-3 text-[10px] font-bold uppercase tracking-widest">
+                <span id="btn-pt" class="lang-btn active-lang cursor-pointer" onclick="setLanguage('pt')">PT</span>
+                <span id="btn-en" class="lang-btn cursor-pointer opacity-50" onclick="setLanguage('en')">EN</span>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="relative">
+    <section class="min-h-screen flex items-center justify-center px-8 relative overflow-hidden">
+    
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center relative z-10">
+            <div class="md:col-span-7 space-y-8 animate-fade-in-left">
+                <h1 class="text-6xl md:text-8xl font-headline font-bold text-on-surface glow-primary leading-tight">Diego dos Santos Silva</h1>
+                <p class="text-xl md:text-2xl font-light text-on-surface-variant leading-relaxed" data-i18n="hero-desc">Desenvolvedor Full Stack & Especialista em Dados.</p>
+                <div class="flex flex-wrap gap-4 mt-4">
+                    <a href="documentos/curriculo DS(fs)..pdf" download="Curriculo_Diego_Santos.pdf" class="px-8 py-4 border-2 border-primary text-primary hover:bg-primary hover:text-surface font-black text-xs tracking-widest uppercase flex items-center gap-3 transition-all duration-300 rounded-xl shadow-[0_0_15px_rgba(88,245,209,0.2)]">Download CV <span class="material-symbols-outlined">download</span></a>
+                    <a href="https://api.whatsapp.com/send?phone=5583988195457&text=Olá Diego" target="_blank" class="px-8 py-4 border-2 border-outline-variant text-on-surface hover:border-primary hover:text-primary font-black text-xs uppercase flex items-center gap-3 transition-all duration-300 rounded-xl" data-i18n="hero-chat">Vamos conversar? <span class="material-symbols-outlined">chat</span></a>
+                </div>
+            </div>
+            <div class="md:col-span-5 flex justify-center animate-fade-in-right">
+    <div class="relative group">
+        <div class="absolute -inset-6 bg-gradient-to-tr from-primary to-tertiary opacity-10 blur-3xl group-hover:opacity-30 transition-opacity duration-700"></div>
+        
+        <div class="photo-frame">
+            <div class="relative w-72 h-[400px] md:w-80 md:h-[480px] overflow-hidden rounded-[1.5rem]">
+                <img src="public/DS.jpg" 
+                     alt="Diego dos Santos Silva"
+                     class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100">
+                
+                <div class="absolute inset-0 bg-gradient-to-t from-surface/60 to-transparent opacity-60 group-hover:opacity-20 transition-opacity duration-700"></div>
+            </div>
+        </div>
+
+        <div class="absolute -bottom-4 -right-4 p-4 bg-surface/90 border border-primary/20 backdrop-blur-md rounded-2xl shadow-2xl">
+            <p class="text-[10px] font-bold text-primary uppercase tracking-tighter">Stack Principal</p>
+            <p class="text-xs font-headline font-bold text-on-surface">JAVA & SPRING</p>
+        </div>
+    </div>
+</div>
+    </section>
+
+    <section class="py-32 px-8 bg-surface-container-low" id="sobre">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-headline font-bold text-primary mb-12 flex items-center gap-4" data-i18n="about-title"><span class="w-12 h-[2px] bg-primary"></span> Sobre o Profissional</h2>
+            <div class="glass-card p-10 rounded-3xl"><p class="text-lg text-on-surface-variant leading-relaxed space-y-6" data-i18n="about-full"></p></div>
+        </div>
+    </section>
+
+    <section class="py-32 px-8" id="carreira">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-headline font-bold text-primary mb-20 text-center uppercase tracking-tighter" data-i18n="nav-career">Experiência Profissional</h2>
+            <div class="space-y-16">
+                <div class="relative pl-12 border-l-2 border-primary/20">
+                    <div class="absolute w-6 h-6 bg-[#010e24] border-2 border-primary rounded-full -left-[13px] top-0 shadow-[0_0_15px_rgba(88,245,209,0.5)]"></div>
+                    <div class="flex flex-col md:flex-row justify-between mb-6">
+                        <div><h3 class="text-2xl font-bold text-on-surface">DBC</h3><p class="text-primary font-medium">Desenvolvedor Full Stack Java</p></div>
+                        <span class="text-on-surface-variant font-mono text-sm mt-2">Nov 2025 – Atual</span>
+                    </div>
+                    <ul class="text-on-surface-variant space-y-2 list-none text-sm leading-relaxed" data-i18n="exp-dbc-full"></ul>
+                </div>
+                <div class="relative pl-12 border-l-2 border-tertiary/20">
+                    <div class="absolute w-6 h-6 bg-[#010e24] border-2 border-tertiary rounded-full -left-[13px] top-0 shadow-[0_0_15px_rgba(108,214,255,0.3)]"></div>
+                    <div class="flex flex-col md:flex-row justify-between mb-6">
+                        <div><h3 class="text-2xl font-bold text-on-surface">INSS</h3><p class="text-tertiary font-medium">Analista de Sistemas e Infraestrutura de TI</p></div>
+                        <span class="text-on-surface-variant font-mono text-sm mt-2">Mar 2025 – Nov 2025</span>
+                    </div>
+                    <ul class="text-on-surface-variant space-y-2 list-none text-sm leading-relaxed" data-i18n="exp-inss-full"></ul>
+                </div>
+                <div class="relative pl-12 border-l-2 border-outline-variant/30">
+                    <div class="absolute w-6 h-6 bg-[#010e24] border-2 border-outline-variant rounded-full -left-[13px] top-0"></div>
+                    <div class="flex flex-col md:flex-row justify-between mb-6">
+                        <div><h3 class="text-2xl font-bold text-on-surface">Stefanini Brasil</h3><p class="text-on-surface-variant font-medium">Especialista em Suporte ao Cliente</p></div>
+                        <span class="text-on-surface-variant font-mono text-sm mt-2">Abr 2023 – Nov 2023</span>
+                    </div>
+                    <ul class="text-on-surface-variant space-y-2 list-none text-sm leading-relaxed" data-i18n="exp-stef-full"></ul>
+                </div>
+                <div class="relative pl-12 border-l-2 border-outline-variant/30">
+                    <div class="absolute w-6 h-6 bg-[#010e24] border-2 border-outline-variant rounded-full -left-[13px] top-0"></div>
+                    <div class="flex flex-col md:flex-row justify-between mb-6">
+                        <div><h3 class="text-2xl font-bold text-on-surface">FerroFort</h3><p class="text-on-surface-variant font-medium">Assistente Administrativo de TI</p></div>
+                        <span class="text-on-surface-variant font-mono text-sm mt-2">Jan 2020 – Mar 2023</span>
+                    </div>
+                    <ul class="text-on-surface-variant space-y-2 list-none text-sm leading-relaxed" data-i18n="exp-ferro-full"></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-8 bg-surface-container-highest/10 relative overflow-hidden" id="tecnologias">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <h2 class="text-4xl md:text-5xl font-headline font-bold text-on-surface text-center mb-24 uppercase tracking-widest" data-i18n="nav-tech"></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card p-8 rounded-3xl space-y-8 group hover:border-primary/50 transition-all">
+                    <h3 class="font-headline font-bold text-primary text-xl uppercase glow-primary" data-i18n="tech-back"></h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex flex-col items-center gap-2 p-3 bg-surface rounded-xl border border-outline-variant/30 hover:scale-105 transition-transform"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="h-8 w-8"><span class="text-[9px] font-mono uppercase">Java</span></div>
+                        <div class="flex flex-col items-center gap-2 p-3 bg-surface rounded-xl border border-outline-variant/30 hover:scale-105 transition-transform"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" class="h-8 w-8"><span class="text-[9px] font-mono uppercase">Spring</span></div>
+                        <div class="flex flex-col items-center gap-2 p-3 bg-surface rounded-xl border border-outline-variant/30 hover:scale-105 transition-transform"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="h-8 w-8"><span class="text-[9px] font-mono uppercase">Python</span></div>
+                        <div class="flex flex-col items-center gap-2 p-3 bg-surface rounded-xl border border-outline-variant/30 hover:scale-105 transition-transform"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" class="h-8 w-8"><span class="text-[9px] font-mono uppercase">GraphQL</span></div>
+                    </div>
+                </div>
+                <div class="glass-card p-8 rounded-3xl space-y-8 group hover:border-tertiary/50 transition-all">
+                    <h3 class="font-headline font-bold text-tertiary text-xl uppercase glow-tertiary" data-i18n="tech-front"></h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex flex-col items-center gap-2 p-3 bg-surface rounded-xl border border-outline-variant/30 hover:scale-105 transition-transform"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" class="h-8 w-8"><span class="text-[9px] font-mono uppercase">Angular</span></div>
+                        <div class="flex flex-col items-center gap-2 p-3 bg-surface rounded-xl border border-outline-variant/30 hover:scale-105 transition-transform"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="h-8 w-8"><span class="text-[9px] font-mono uppercase">React</span></div>
+                        <div class="flex flex-col items-center gap-2 p-3 bg-surface rounded-xl border border-outline-variant/30 hover:scale-105 transition-transform"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" class="h-8 w-8 invert"><span class="text-[9px] font-mono uppercase">Next.js</span></div>
+                        <div class="flex flex-col items-center gap-2 p-3 bg-surface rounded-xl border border-outline-variant/30 hover:scale-105 transition-transform"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" class="h-8 w-8"><span class="text-[9px] font-mono uppercase">Tailwind</span></div>
+                    </div>
+                </div>
+                <div class="glass-card p-8 rounded-3xl space-y-8 group hover:border-primary/50 transition-all">
+                    <h3 class="font-headline font-bold text-primary text-xl uppercase glow-primary" data-i18n="tech-data"></h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex flex-col items-center gap-2 p-3 bg-surface rounded-xl border border-outline-variant/30 hover:scale-105 transition-transform"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" class="h-8 w-8"><span class="text-[9px] font-mono uppercase">Postgres</span></div>
+                        <div class="flex flex-col items-center gap-2 p-3 bg-surface rounded-xl border border-outline-variant/30 hover:scale-105 transition-transform"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="h-8 w-8"><span class="text-[9px] font-mono uppercase">MySQL</span></div>
+                        <div class="flex flex-col items-center gap-2 p-3 bg-surface rounded-xl border border-outline-variant/30 hover:scale-105 transition-transform"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="h-8 w-8"><span class="text-[9px] font-mono uppercase">MongoDB</span></div>
+                        <div class="flex flex-col items-center gap-2 p-3 bg-surface rounded-xl border border-outline-variant/30 hover:scale-105 transition-transform"><span class="material-symbols-outlined text-primary text-2xl">database</span><span class="text-[9px] font-mono uppercase">Modelagem</span></div>
+                    </div>
+                </div>
+                <div class="glass-card p-8 rounded-3xl space-y-8 group hover:border-tertiary/50 transition-all">
+                    <h3 class="font-headline font-bold text-tertiary text-xl uppercase glow-tertiary" data-i18n="tech-devops"></h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex flex-col items-center gap-2 p-3 bg-surface rounded-xl border border-outline-variant/30 hover:scale-105 transition-transform"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="h-8 w-8"><span class="text-[9px] font-mono uppercase">Git</span></div>
+                        <div class="flex flex-col items-center gap-2 p-3 bg-surface rounded-xl border border-outline-variant/30 hover:scale-105 transition-transform"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="h-8 w-8"><span class="text-[9px] font-mono uppercase">Docker</span></div>
+                        <div class="flex flex-col items-center gap-2 p-3 bg-surface rounded-xl border border-outline-variant/30 hover:scale-105 transition-transform"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" class="h-8 w-8"><span class="text-[9px] font-mono uppercase">K8s</span></div>
+                        <div class="flex flex-col items-center gap-2 p-3 bg-surface rounded-xl border border-outline-variant/30 hover:scale-105 transition-transform"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" class="h-8 w-8"><span class="text-[9px] font-mono uppercase">Jira</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-8 bg-surface-container-low" id="projetos">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-headline font-bold text-center mb-20 uppercase tracking-widest" data-i18n="nav-projects">Engenharia e Projetos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="glass-card p-6 rounded-3xl group">
+                    <div class="aspect-video rounded-2xl overflow-hidden mb-6"><img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600" class="w-full h-full object-cover group-hover:scale-110 transition-transform"></div>
+                    <h4 class="font-bold text-primary text-xl mb-3">Desbravadores</h4><p class="text-xs text-on-surface-variant leading-relaxed" data-i18n="proj-desb"></p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl group">
+                    <div class="aspect-video rounded-2xl overflow-hidden mb-6"><img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=600" class="w-full h-full object-cover group-hover:scale-110 transition-transform"></div>
+                    <h4 class="font-bold text-tertiary text-xl mb-3">CINE(X)</h4><p class="text-xs text-on-surface-variant leading-relaxed" data-i18n="proj-cine"></p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl group">
+                    <div class="aspect-video rounded-2xl overflow-hidden mb-6"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600" class="w-full h-full object-cover group-hover:scale-110 transition-transform"></div>
+                    <h4 class="font-bold text-on-surface text-xl mb-3">EduGrade</h4><p class="text-xs text-on-surface-variant leading-relaxed" data-i18n="proj-edu"></p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl group">
+                    <div class="aspect-video rounded-2xl overflow-hidden mb-6"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600" class="w-full h-full object-cover group-hover:scale-110 transition-transform"></div>
+                    <h4 class="font-bold text-primary text-xl mb-3">AquaFarm</h4><p class="text-xs text-on-surface-variant leading-relaxed" data-i18n="proj-aqua"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-8" id="academico">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-3xl font-headline font-bold text-primary mb-16 uppercase" data-i18n="nav-edu"></h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 bg-surface-container-high rounded-3xl border-b-4 border-primary"><h5 class="font-bold text-lg mb-2">Unifacisa</h5><p class="text-on-surface-variant text-sm">Sistemas de Informação</p></div>
+                <div class="p-8 bg-surface-container-high rounded-3xl border-b-4 border-tertiary"><h5 class="font-bold text-lg mb-2">UEPB</h5><p class="text-on-surface-variant text-sm">Administração</p></div>
+                <div class="p-8 bg-surface-container-high rounded-3xl border-b-4 border-outline-variant"><h5 class="font-bold text-lg mb-2">Estação Gráfica</h5><p class="text-on-surface-variant text-sm">Informática & Design</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-8 bg-surface-container-low" id="contato">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div class="space-y-8">
+                <h2 class="text-5xl font-headline font-bold text-primary" data-i18n="contact-title"></h2>
+                <div class="p-8 glass-card rounded-3xl flex items-center justify-between group">
+                    <div><p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1" data-i18n="email-label"></p><p class="text-on-surface font-medium text-lg">diegosantos041201@gmail.com</p></div>
+                    <button onclick="copyEmail()" class="text-primary p-3 hover:bg-primary/20 rounded-full transition-all"><span class="material-symbols-outlined">content_copy</span></button>
+                </div>
+                <div class="flex gap-6">
+                    <a href="https://github.com/diegosantosss" target="_blank" class="p-4 bg-surface-container-highest rounded-2xl hover:text-primary transition-all"><span class="material-symbols-outlined">code</span></a>
+                    <a href="https://www.linkedin.com/in/diego-santos-8a2b6025a/" target="_blank" class="p-4 bg-surface-container-highest rounded-2xl hover:text-tertiary transition-all"><span class="material-symbols-outlined">person</span></a>
+                    <a href="https://wa.me/5583988195457" target="_blank" class="p-4 bg-surface-container-highest rounded-2xl hover:text-primary transition-all"><span class="material-symbols-outlined">chat</span></a>
+                </div>
+            </div>
+            <form action="https://api.web3forms.com/submit" method="POST" class="glass-card p-10 rounded-[2.5rem] space-y-6">
+                <input type="hidden" name="access_key" value="c48df362-1b9f-4a93-b772-83db4b4c46fa">
+                <label class="text-[10px] uppercase tracking-widest text-on-surface-variant ml-2 font-bold" data-i18n="form-label-name"></label>
+                <input type="text" name="name" required data-i18n="holder-name" class="w-full bg-surface-container-highest border-none rounded-2xl p-5 text-sm focus:ring-2 focus:ring-primary text-white">
+                <label class="text-[10px] uppercase tracking-widest text-on-surface-variant ml-2 font-bold" data-i18n="form-label-email"></label>
+                <input type="email" name="email" required data-i18n="holder-email" class="w-full bg-surface-container-highest border-none rounded-2xl p-5 text-sm focus:ring-2 focus:ring-primary text-white">
+                <label class="text-[10px] uppercase tracking-widest text-on-surface-variant ml-2 font-bold" data-i18n="form-label-msg"></label>
+                <textarea name="message" required data-i18n="holder-msg" rows="4" class="w-full bg-surface-container-highest border-none rounded-2xl p-5 text-sm focus:ring-2 focus:ring-primary text-white"></textarea>
+                <button type="submit" class="w-full py-5 bg-primary text-surface font-black text-xs tracking-widest uppercase rounded-xl hover:shadow-[0_0_30px_rgba(88,245,209,0.4)] transition-all" data-i18n="form-btn"></button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-[10px] font-mono text-on-surface-variant uppercase tracking-[0.6em]">© 2026 Diego dos Santos Silva • Campina Grande, PB</footer>
+</main>
+
+<script src="js/translations.js"></script>
+<script src="js/main.js"></script>
+<script>
+    // Inicialização automática para preencher os campos vazios ao carregar
+    window.onload = () => setLanguage('pt');
+</script>
+</body>
+</html>
