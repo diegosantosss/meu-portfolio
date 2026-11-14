@@ -1,6 +1,10 @@
 const translations = {
 
     pt: {
+        "notebook-label": "Tela com a foto de Diego dos Santos Silva",
+        "notebook-mouse": "Passe o mouse ou pressione Enter",
+        "notebook-touch": "Toque para ligar ou desligar",
+        "portrait-stack": "Stack Principal",
 
         // NAV
         "nav-about": "Sobre",
@@ -115,6 +119,10 @@ const translations = {
 
 
     en: {
+        "notebook-label": "Screen with Diego dos Santos Silva’s photo",
+        "notebook-mouse": "Hover or press Enter",
+        "notebook-touch": "Tap to turn on or off",
+        "portrait-stack": "Primary Stack",
 
         // NAV
         "nav-about": "About",

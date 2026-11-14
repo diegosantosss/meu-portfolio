@@ -1,5 +1,6 @@
 // Função para Troca de Idioma
 function setLanguage(lang) {
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
 
@@ -43,63 +44,4 @@ function copyEmail() {
         .writeText("diegosantos041201@gmail.com")
         .then(() => alert('E-mail copiado!'));
 
-}
-
-
-// Animação do Canvas (Background)
-const canvas = document.getElementById('code-bg');
-
-if (canvas) {
-
-    const ctx = canvas.getContext('2d');
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const codes = "JAVA SPRING SQL REACT ANGULAR DOCKER CLOUD 01";
-
-    const columns = canvas.width / 20;
-
-    const drops = [];
-
-    for (let x = 0; x < columns; x++) {
-        drops[x] = 1;
-    }
-
-    function drawCode() {
-
-        ctx.fillStyle = "rgba(1, 14, 36, 0.05)";
-        ctx.fillRect(
-            0,
-            0,
-            canvas.width,
-            canvas.height
-        );
-
-        ctx.fillStyle = "#58f5d1";
-        ctx.font = "10px monospace";
-
-        for (let i = 0; i < drops.length; i++) {
-
-            const text =
-                codes[Math.floor(Math.random() * codes.length)];
-
-            ctx.fillText(
-                text,
-                i * 20,
-                drops[i] * 20
-            );
-
-            if (
-                drops[i] * 20 > canvas.height &&
-                Math.random() > 0.975
-            ) {
-                drops[i] = 0;
-            }
-
-            drops[i]++;
-        }
-    }
-
-    setInterval(drawCode, 50);
 }

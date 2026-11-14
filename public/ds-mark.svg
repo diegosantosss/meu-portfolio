@@ -1,1 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#0a1410"/><rect x="3" y="3" width="58" height="58" rx="12" fill="none" stroke="#8cf5ad" stroke-opacity=".6"/><text x="30" y="42" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="900" letter-spacing="-4" fill="#f0fff4">DS</text><circle cx="51" cy="43" r="4" fill="#8cf5ad"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#151719" stroke="#626a70" stroke-width="2"/>
+  <path d="M13 19h8c8 0 13 5 13 13s-5 13-13 13h-8zm6 6v14h2c4 0 7-2 7-7s-3-7-7-7z" fill="#f0f4f1"/>
+  <path d="M51 23c-5-2-12-3-12 3 0 6 13 3 13 12 0 7-8 9-15 6" fill="none" stroke="#8cf5ad" stroke-width="5" stroke-linecap="round"/>
+</svg>

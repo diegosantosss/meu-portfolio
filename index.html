@@ -26,12 +26,12 @@
                     colors: {
                         "primary": "#8cf5ad",
                         "tertiary": "#79a9dd",
-                        "surface": "#080d0e",
+                        "surface": "#101113",
                         "on-surface": "#dbe6ff",
                         "on-surface-variant": "#9eabc8",
-                        "surface-container-low": "#0e1515",
-                        "surface-container-high": "#172221",
-                        "surface-container-highest": "#1c2b28",
+                        "surface-container-low": "#151719",
+                        "surface-container-high": "#1b1e21",
+                        "surface-container-highest": "#22262a",
                         "outline-variant": "#42564f",
                     },
                     fontFamily: {
@@ -44,7 +44,7 @@
     </script>
 </head>
 
-<body class="selection:bg-primary selection:text-on-primary"><canvas id="matrix-rain" aria-hidden="true"></canvas>
+<body class="selection:bg-primary selection:text-on-primary">
 
     <!-- NAVBAR -->
     <nav class="fixed top-0 w-full z-50 bg-[#010e24]/90 backdrop-blur-xl border-b border-outline-variant/20">
@@ -116,9 +116,21 @@
     <main class="relative">
 
         <!-- INÍCIO -->
-        <main id="inicio" class="relative"></main>
-
-        <section class="min-h-screen flex items-center justify-center px-8 relative overflow-hidden">
+        <section id="inicio" class="portfolio-hero min-h-screen flex items-center justify-center px-8 relative overflow-hidden">
+            <div class="java-backdrop" aria-hidden="true">
+                <pre class="java-code java-code--upper"><span>public record</span> Project(String name, Status status) {
+    <span>public boolean</span> isActive() {
+        <span>return</span> status == Status.ACTIVE;
+    }
+}</pre>
+                <pre class="java-code java-code--lower">List&lt;Project&gt; activeProjects = projects.stream()
+    .filter(Project::isActive)
+    .sorted(Comparator.comparing(Project::name))
+    .toList();</pre>
+                <pre class="java-code java-code--edge"><span>enum</span> Status {
+    ACTIVE, ARCHIVED
+}</pre>
+            </div>
 
             <div class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center relative z-10">
 
@@ -168,36 +180,28 @@
                      data-aos="fade-left"
                      data-aos-delay="400">
 
-                    <div class="relative group portrait-3d">
-
-                        <div class="absolute -inset-6 bg-gradient-to-tr from-primary to-tertiary opacity-10 blur-3xl group-hover:opacity-30 transition-opacity duration-700"></div>
-
-                        <div class="photo-frame">
-
-                            <div class="relative w-72 h-[400px] md:w-80 md:h-[480px] overflow-hidden rounded-[1.5rem]">
-
-                                <img src="public/DS.jpg"
-                                     alt="Diego dos Santos Silva"
-                                     class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100">
-
-                                <div class="absolute inset-0 bg-gradient-to-t from-surface/60 to-transparent opacity-60 group-hover:opacity-20 transition-opacity duration-700"></div>
-
+                    <div class="portrait">
+                        <button type="button" class="notebook" aria-pressed="false"
+                                aria-labelledby="notebook-label" aria-describedby="notebook-hint">
+                            <span id="notebook-label" class="sr-only" data-i18n="notebook-label">Tela com a foto de Diego dos Santos Silva</span>
+                            <span class="notebook-lid" aria-hidden="true">
+                                <span class="notebook-display">
+                                    <img src="public/DS.jpg" alt="" class="notebook-photo">
+                                </span>
+                                <span class="notebook-led"></span>
+                            </span>
+                            <span class="notebook-base" aria-hidden="true"></span>
+                        </button>
+                        <div class="portrait-details">
+                            <p id="notebook-hint" class="notebook-hint">
+                                <span class="notebook-hint-mouse" data-i18n="notebook-mouse">Passe o mouse ou pressione Enter</span>
+                                <span class="notebook-hint-touch" data-i18n="notebook-touch">Toque para ligar ou desligar</span>
+                            </p>
+                            <div class="portrait-stack">
+                                <p class="text-[10px] font-bold text-primary uppercase" data-i18n="portrait-stack">Stack Principal</p>
+                                <p class="text-xs font-headline font-bold text-on-surface">JAVA &amp; SPRING</p>
                             </div>
-
                         </div>
-
-                        <div class="absolute -bottom-4 -right-4 p-4 bg-surface/90 border border-primary/20 backdrop-blur-md rounded-2xl shadow-2xl">
-
-                            <p class="text-[10px] font-bold text-primary uppercase tracking-tighter">
-                                Stack Principal
-                            </p>
-
-                            <p class="text-xs font-headline font-bold text-on-surface">
-                                JAVA & SPRING
-                            </p>
-
-                        </div>
-
                     </div>
                 </div>
 
@@ -799,7 +803,7 @@
 
             <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
 
-                <div class="space-y-8"
+                <div class="min-w-0 space-y-8"
                      data-aos="fade-right">
 
                     <h2 class="text-5xl font-headline font-bold text-primary"
@@ -807,7 +811,7 @@
                         O contato que você precisa!
                     </h2>
 
-                    <div class="p-8 glass-card rounded-3xl flex items-center justify-between group">
+                    <div class="p-4 sm:p-8 glass-card rounded-3xl flex items-center justify-between gap-2 group">
 
                         <div>
 
@@ -816,7 +820,7 @@
                                 E-MAIL DIRETO
                             </p>
 
-                            <p class="text-on-surface font-medium text-lg">
+                            <p class="text-on-surface font-medium text-base sm:text-lg [overflow-wrap:anywhere]">
                                 diegosantos041201@gmail.com
                             </p>
 
@@ -873,8 +877,8 @@
 
                 <form action="https://api.web3forms.com/submit"
                       method="POST"
-                      class="glass-card p-10 rounded-[2.5rem] space-y-6"
-                      data-aos="fade-left">
+                      class="glass-card min-w-0 p-6 sm:p-10 rounded-[2.5rem] space-y-6"
+                      data-aos="fade-up">
 
                     <input type="hidden"
                            name="access_key"
@@ -941,7 +945,9 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
-        AOS.init({
+        if (window.AOS) document.documentElement.classList.add('aos-enabled');
+        window.AOS?.init({
+            disable: () => matchMedia('(prefers-reduced-motion: reduce)').matches,
             duration: 1000,
             once: true,
             offset: 100
@@ -949,7 +955,8 @@
     </script>
 
     <script src="js/translations.js"></script>
-    <script src="js/main.js"></script><script src="js/matrix-experience.js" defer></script>
+    <script src="js/main.js"></script>
+    <script src="js/notebook.js" defer></script>
 
     <script>
         window.addEventListener('DOMContentLoaded', () => {
