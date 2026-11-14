@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     
     <title>Diego Santos | Custom Software Engineering Analyst</title>
-    <link rel="icon" type="image/png" href="public/DS- file.png">
+    <link rel="icon" type="image/svg+xml" href="public/ds-mark.svg">
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -24,15 +24,15 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#58f5d1",
-                        "tertiary": "#6cd6ff",
-                        "surface": "#010e24",
+                        "primary": "#8cf5ad",
+                        "tertiary": "#79a9dd",
+                        "surface": "#080d0e",
                         "on-surface": "#dbe6ff",
                         "on-surface-variant": "#9eabc8",
-                        "surface-container-low": "#02132b",
-                        "surface-container-high": "#0b203d",
-                        "surface-container-highest": "#102645",
-                        "outline-variant": "#3b4861",
+                        "surface-container-low": "#0e1515",
+                        "surface-container-high": "#172221",
+                        "surface-container-highest": "#1c2b28",
+                        "outline-variant": "#42564f",
                     },
                     fontFamily: {
                         "headline": ["Space Grotesk"],
@@ -44,14 +44,14 @@
     </script>
 </head>
 
-<body class="selection:bg-primary selection:text-on-primary">
+<body class="selection:bg-primary selection:text-on-primary"><canvas id="matrix-rain" aria-hidden="true"></canvas>
 
     <!-- NAVBAR -->
     <nav class="fixed top-0 w-full z-50 bg-[#010e24]/90 backdrop-blur-xl border-b border-outline-variant/20">
         <div class="flex justify-between items-center px-8 h-20 max-w-7xl mx-auto w-full">
 
             <a href="#inicio"
-               class="text-2xl font-bold tracking-tighter text-primary font-headline animate-pulse cursor-pointer hover:scale-110 transition-transform">
+               class="ds-brand">
                 DS
             </a>
 
@@ -126,8 +126,8 @@
                      data-aos="fade-up"
                      data-aos-duration="1200">
 
-                    <h1 class="text-6xl md:text-8xl font-headline font-bold text-on-surface glow-primary leading-tight">
-                        Diego dos Santos Silva
+                    <h1 class="hero-name text-6xl md:text-8xl font-headline font-bold text-on-surface leading-tight">
+                        Diego <span class="hero-santos">Santos</span><small class="hero-fullname">Diego dos Santos Silva</small>
                     </h1>
 
                     <p class="text-xl md:text-2xl font-light text-on-surface-variant leading-relaxed"
@@ -168,7 +168,7 @@
                      data-aos="fade-left"
                      data-aos-delay="400">
 
-                    <div class="relative group">
+                    <div class="relative group portrait-3d">
 
                         <div class="absolute -inset-6 bg-gradient-to-tr from-primary to-tertiary opacity-10 blur-3xl group-hover:opacity-30 transition-opacity duration-700"></div>
 
@@ -949,7 +949,7 @@
     </script>
 
     <script src="js/translations.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js"></script><script src="js/matrix-experience.js" defer></script>
 
     <script>
         window.addEventListener('DOMContentLoaded', () => {
