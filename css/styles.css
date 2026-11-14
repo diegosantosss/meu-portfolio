@@ -88,7 +88,7 @@ section { scroll-margin-top: 80px; }
 #inicio { scroll-margin-top: 0; }
 a:focus-visible, button:focus-visible { outline: 2px solid #8cf5ad; outline-offset: 4px; }
 
-.portrait { width: min(100%, 34rem); min-width: 0; }
+.portrait { position: relative; width: min(100%, 34rem); min-width: 0; }
 .notebook {
     display: block;
     width: 100%;
@@ -110,8 +110,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid #8cf5ad; outline-offs
     box-shadow: 0 18px 55px #0009;
 }
 .notebook-display {
-    display: grid;
-    place-items: center;
+    display: block;
+    position: relative;
     aspect-ratio: 16 / 11;
     overflow: hidden;
     border-radius: 6px;
@@ -119,15 +119,64 @@ a:focus-visible, button:focus-visible { outline: 2px solid #8cf5ad; outline-offs
     box-shadow: inset 0 0 0 1px #ffffff16;
 
 }
-.notebook-photo {
-    width: 100%;
-    height: 100%;
-    min-height: 0;
-    object-fit: contain;
-    background: #181d20;
+.notebook-workspace {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    /* Fit the 9:16 portrait to the height of the 16:11 display. */
+    grid-template-columns: minmax(0, 1fr) 38.67%;
+    grid-template-rows: minmax(0, 1fr);
+    container-type: inline-size;
+    background: #1e1f22;
     opacity: 0;
     transition: opacity .24s ease;
 }
+.notebook-photo {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    border-left: 1px solid #37393e;
+}
+.ide-editor { min-width: 0; overflow: hidden; }
+.ide-tabs {
+    display: block;
+    border-bottom: 1px solid #393b40;
+    background: #2b2d30;
+    color: #e6e7ea;
+    font: 600 clamp(7px, 2.6cqi, 12px)/1.4 'Inter', sans-serif;
+}
+.ide-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: .4em;
+    padding: .65em .7em .55em;
+    border-bottom: 2px solid #6892e7;
+    background: #1e1f22;
+    white-space: nowrap;
+}
+.ide-java-icon { color: #f29a75; font-weight: 800; }
+.ide-code {
+    display: block;
+    padding: .9em .45em;
+    counter-reset: ide-line;
+    color: #d3d6dd;
+    font: 400 clamp(6px, 1.95cqi, 11px)/1.65 Consolas, monospace;
+}
+.ide-code > span { display: block; white-space: pre; min-height: 1.65em; }
+.ide-code > span::before {
+    counter-increment: ide-line;
+    content: counter(ide-line);
+    display: inline-block;
+    width: 2ch;
+    margin-right: .8em;
+    text-align: right;
+    color: #9398a4;
+}
+.ide-code i, .ide-code em { font-style: normal; }
+.ide-code i { color: #cf8e6d; }
+.ide-code em { color: #8caa8d; }
+.ide-code b { color: #b9bb73; font-weight: 400; }
 .notebook-led {
     position: absolute;
     bottom: 5px;
@@ -137,7 +186,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #8cf5ad; outline-offs
     border-radius: 50%;
     background: #78818a;
 }
-.notebook[aria-pressed="true"] .notebook-photo { opacity: 1; }
+.notebook[aria-pressed="true"] .notebook-workspace { opacity: 1; }
 .notebook[aria-pressed="true"] .notebook-led { background: #8cf5ad; box-shadow: 0 0 8px #8cf5ad; }
 .notebook-base {
     display: block;
@@ -155,6 +204,46 @@ a:focus-visible, button:focus-visible { outline: 2px solid #8cf5ad; outline-offs
     border-radius: 0 0 5px 5px;
     background: #202327;
 }
+.portrait-earbuds {
+    position: absolute;
+    z-index: 1;
+    top: 53%;
+    right: -1.1rem;
+    width: 4rem;
+    height: 4rem;
+    pointer-events: none;
+    filter: drop-shadow(4px 9px 9px #000a);
+}
+.earbud {
+    position: absolute;
+    width: 23px;
+    height: 17px;
+    border-radius: 65% 55% 52% 60%;
+    background: radial-gradient(at 30% 20%, #fff, #e6eaed 55%, #9ea8ae);
+}
+.earbud::before {
+    content: '';
+    position: absolute;
+    right: 3px;
+    top: 10px;
+    width: 7px;
+    height: 23px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #a9b1b9, #fbfcfd 60%, #d1d6da);
+}
+.earbud::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 5px;
+    width: 7px;
+    height: 5px;
+    border-radius: 50%;
+    background: #383d42;
+}
+.earbud--left { top: 16px; left: 7px; transform: rotate(24deg); }
+.earbud--right { top: 1px; right: 7px; transform: scaleX(-1) rotate(18deg); }
+
 .portrait-details {
     display: flex;
     flex-wrap: wrap;
@@ -172,6 +261,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #8cf5ad; outline-offs
     .notebook-hint-touch { display: inline; }
 }
 @media (max-width: 767px) {
+    .portrait-earbuds { right: -1.2rem; transform: scale(.76); transform-origin: right center; }
     .hero-name { font-size: clamp(3.4rem, 15vw, 5.5rem) !important; }
     .java-code--upper { top: 12%; right: -7%; opacity: .2; }
     .java-code--lower { left: 17%; bottom: 2%; opacity: .27; }
