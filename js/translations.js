@@ -106,6 +106,12 @@ const translations = {
         // CONTACT
         "contact-title": "O contato que você precisa!",
         "email-label": "E-MAIL DIRETO",
+        "copy-email": "Copiar e-mail",
+        "copy-success": "✓ E-mail copiado!",
+        "copy-error": "Não foi possível copiar. Selecione o endereço acima para copiar manualmente.",
+        "form-sending": "Enviando…",
+        "form-success": "Mensagem enviada! Obrigado pelo contato. Em breve, retorno por e-mail.",
+        "form-error": "Não foi possível enviar sua mensagem. Tente novamente.",
 
         "form-label-name": "NOME COMPLETO",
         "form-label-email": "E-MAIL PARA RETORNO",
@@ -224,6 +230,12 @@ const translations = {
         // CONTACT
         "contact-title": "The contact you need!",
         "email-label": "DIRECT E-MAIL",
+        "copy-email": "Copy email",
+        "copy-success": "✓ Email copied!",
+        "copy-error": "Could not copy. Select the address above to copy it manually.",
+        "form-sending": "Sending…",
+        "form-success": "Message sent! Thanks for reaching out. I’ll get back to you by email soon.",
+        "form-error": "Could not send your message. Please try again.",
 
         "form-label-name": "FULL NAME",
         "form-label-email": "RETURN E-MAIL",
